@@ -1,0 +1,46 @@
+CREATE TABLE departments (
+  dept_no char(4) not null distkey sortkey,
+  dept_name varchar(40) not null
+);
+
+CREATE TABLE departments (
+  dept_no char(4) not null distkey sortkey,
+  dept_name varchar(40) not null
+);
+
+CREATE TABLE dept_emp (
+  emp_no int not null distkey sortkey,
+  dept_no varchar(4) not null,
+  from_date date not null,
+  to_date date not null
+);
+
+CREATE TABLE dept_manager (
+  emp_no int not null distkey sortkey,
+  dept_no char(4) not null,
+  from_date date not null,
+  to_date date not null
+);
+
+CREATE TABLE employee (
+  emp_no int not null distkey sortkey,
+  birth_date date not null,
+  first_name varchar(14) not null,
+  last_name varchar(16) not null,
+  gender varchar(1) not null,
+  hire_date date not null
+);
+
+CREATE TABLE salaries (
+  emp_no int not null distkey sortkey,
+  salary int not null,
+  from_date date not null,
+  to_date date not null
+);
+
+CREATE TABLE titles (
+  emp_no int not null distkey sortkey,
+  title varchar(50) not null,
+  from_date date not null,
+  to_date date DEFAULT NULL
+);
